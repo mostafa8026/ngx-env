@@ -1,6 +1,6 @@
 {
-  "name": "@ngx-env/builder",
-  "version": "16.0.0",
+  "name": "@dcdl/ngx-env-builder",
+  "version": "16.0.3",
   "description": "Easily inject environment variables into your Angular applications",
   "author": "chihab <chihab@gmail.com>",
   "homepage": "https://github.com/chihab/ngx-env",
@@ -30,6 +30,7 @@
     "postbuild": "node dist/schema-copy.js"
   },
   "dependencies": {
+    "chalk": "^2.4.2",
     "dotenv": "9.0.2",
     "dotenv-expand": "5.1.0"
   },
@@ -45,5 +46,8 @@
   },
   "peerDpendencies": {
     "@angular-devkit/schematics-cli": ">=12.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.chapyar.com/artifactory/api/npm/npm/"
   }
 }
