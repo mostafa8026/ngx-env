@@ -34,12 +34,15 @@ function getClientEnvironment(prefix: RegExp, env: string) {
       );
     }
   });
+  console.log(`The environment variables are:`)
   return Object.keys(process.env)
     .filter((key) => prefix.test(key))
+    .sort()
     .reduce(
       (env, key) => {
         env.raw[key] = process.env[key];
         env.stringified[key] = JSON.stringify(process.env[key]);
+        console.log(`- ${key}`)
         return env;
       },
       {
